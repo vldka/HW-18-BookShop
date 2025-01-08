@@ -35,7 +35,10 @@ dependencies {
             'org.assertj:assertj-core:3.24.2',
             'com.fasterxml.jackson.core:jackson-databind:2.15.2',
             "com.codeborne:selenide:7.2.3",
-            'io.qameta.allure:allure-selenide:2.27.0'
+            'io.qameta.allure:allure-selenide:2.27.0',
+            'org.seleniumhq.selenium:selenium-java:3.141.59',
+            'io.github.bonigarcia:webdrivermanager:5.9.2',
+            'org.aeonbits.owner:owner:1.0.12'
     )
 }
 
@@ -48,6 +51,10 @@ tasks.withType(Test) {
             exceptionFormat "short"
         }
     }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 task allTests(type: Test) {

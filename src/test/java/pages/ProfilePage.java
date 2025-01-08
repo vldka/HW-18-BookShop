@@ -30,6 +30,7 @@ public class ProfilePage {
 
     @Step("проверка наличия книг в UI")
     public void checkAddBookUI(String value) {
+
         tableItem.shouldHave(text(value));
     }
 
