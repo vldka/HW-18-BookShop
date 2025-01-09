@@ -27,6 +27,7 @@ public class WebDriverProvider {
                     "enableVNC", true,
                     "enableVideo", true
             ));
+
             Configuration.browserCapabilities = capabilities;
         }
     }

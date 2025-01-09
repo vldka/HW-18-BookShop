@@ -6,7 +6,6 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static data.TestData.login;
 
 public class ProfilePage {
     private final SelenideElement emptyList = $(".rt-noData");
@@ -23,7 +22,7 @@ public class ProfilePage {
     }
 
     @Step("проверка отображения User Name в UI")
-    public ProfilePage checkUserNameUI() {
+    public ProfilePage checkUserNameUI(String login) {
         userName.shouldBe(text(login));
         return this;
     }

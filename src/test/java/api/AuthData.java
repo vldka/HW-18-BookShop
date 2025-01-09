@@ -10,11 +10,12 @@ import static specs.BaseSpec.requestSpec;
 import static specs.BaseSpec.responseSpecSuccess;
 
 public class AuthData extends TestData {
+
     @Step("Получаем данные авторизации")
     public static AuthResponseBody getAuth() {
         AuthRequestBody authData = new AuthRequestBody();
-        authData.setUserName(login);
-        authData.setPassword(password);
+        authData.setUserName(authConfig.getLogin());
+        authData.setPassword(authConfig.getPassword());
 
         return given(requestSpec)
                 .body(authData)

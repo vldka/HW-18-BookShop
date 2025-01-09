@@ -13,9 +13,7 @@ public class BaseSpec {
     public static RequestSpecification requestSpec = new RequestSpecBuilder()
             .setContentType(JSON)
             .addFilter(withCustomTemplates())
-            .log(LogDetail.URI)
-            .log(LogDetail.HEADERS)
-            .log(LogDetail.BODY)
+            .log(LogDetail.ALL)
             .build();
     public static ResponseSpecification responseSpecSuccess = new ResponseSpecBuilder()
             .expectStatusCode(200)

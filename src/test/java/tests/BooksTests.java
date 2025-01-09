@@ -7,8 +7,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ProfilePage;
+
+import static data.TestData.authConfig;
+
 @DisplayName("Работа с книгами")
-public class BooksTests extends TestBase{
+public class BooksTests extends TestBase {
 
     @Test
     @WithLogin
@@ -22,7 +25,7 @@ public class BooksTests extends TestBase{
         booksSteps.deleteBookApi();
         booksSteps.addBookApi(data.isbn);
         page.openPageUI();
-        page.checkUserNameUI();
+        page.checkUserNameUI(authConfig.getLogin());
         page.checkAddBookUI("Learning JavaScript Design Patterns");
         page.deleteBookUI();
         page.checkProfileIsEmptyUI();
